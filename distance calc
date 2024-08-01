@@ -1,0 +1,9 @@
+# input
+x1 = float(input("Enter x1 cordinate: "))
+y1 = float(input("Enter y1 cordinate: "))
+x2 = float(input("Enter x2 cordinate: "))
+y2 = float(input("Enter y1 cordinate: "))
+
+distance = ((x2-x1)**2+(y2-y1)**2)**0.5
+
+print("The distance between x1 and y1 is", distance) 
