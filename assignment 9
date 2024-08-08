@@ -1,0 +1,16 @@
+# input
+char_input = input('Enter a single character: ')
+
+# processing
+if len(char_input) == 1 and char_input.isalpha():
+    char = char_input.lower()
+    if char in 'aeiou':
+        print("The character is a vowel")
+    else:
+        print("The character is a consonant")
+else:
+    if len(char_input) != 1:
+        print("Error: please only enter one character")
+    else:
+        # output
+        print("Error: the input is not a letter")
