@@ -1,0 +1,17 @@
+# input
+age_input = input("Enter your age: ")
+
+# processing
+if age_input.isdigit():
+    age = int(age_input)
+    if age > 0:
+        if age < 18:
+            print("minor")
+        elif 18 <= age < 65:
+            print("adult")
+        else:
+            print("senior citizen")
+    else:
+        print("Error: age must be a positive number")
+else:
+    print("Error: invalid input, please enter a positive number")
