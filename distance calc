@@ -7,3 +7,10 @@ y2 = float(input("Enter y1 cordinate: "))
 distance = ((x2-x1)**2+(y2-y1)**2)**0.5
 
 print("The distance between x1 and y1 is", distance) 
+
+x = 3
+y = 5
+if x > y:
+    print("x > y")
+else:
+    print("y is greater than x") 
