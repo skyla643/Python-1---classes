@@ -1,0 +1,15 @@
+def convert_time_duration():
+    while True:
+        try:
+            time_duration_hours = float(input("Enter time in hours: "))
+            if time_duration_hours < 0:
+                print("Please enter a positive number.")
+                continue
+            time_duration_minutes = time_duration_hours * 60
+            time_duration_seconds = time_duration_minutes * 60
+            print(f"Time duration: {time_duration_minutes} minutes or {time_duration_seconds} seconds.")
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+convert_time_duration() 
