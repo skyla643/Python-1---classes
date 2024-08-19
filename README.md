@@ -1,10 +1,10 @@
 # Python 1 Course Guide
 
-Welcome to the **Python 1 Course** repository! This repository contains assignments and examples designed to introduce you to foundational programming concepts using Python.
+Welcome to the **Python 1 Course** repository! This repository contains assignments for my Python 1 class, showcasing my progress and understanding of Python programming.
 
 ## Repository Structure
 
-This repository is organized by weeks, each containing specific assignments focused on different aspects of Python programming.
+This repository is organized by weeks, with each week focusing on specific assignments that cover different aspects of Python programming.
 
 ### Week 1: Introduction and Setup
 - **Assignment 1**: Handling Non-Numeric Input for Financial Calculations
@@ -39,8 +39,8 @@ This repository is organized by weeks, each containing specific assignments focu
 
 ### Final Exam/Project: Inventory Management System
 - **Functionality**:
-  - Add Item: Input name, price, quantity, category.
-  - Update Item: Update price, quantity, category.
+  - Add Item: Input name, price, quantity, and category.
+  - Update Item: Update price, quantity, and category.
   - View Inventory: Display all items.
   - Remove Item: Remove item by name.
   - Search by Category: Display items by category.
@@ -58,14 +58,14 @@ This repository is organized by weeks, each containing specific assignments focu
    ```
 
 2. **Navigate to the Assignments**:
-   - Each assignment is contained within its folder named `Assignment X` where `X` is the assignment number. The main Python files are available for you to study and run in your Python environment.
+   - Each assignment is contained within its folder named `Assignment X`, where `X` is the assignment number. The main Python files are available for you to study and run in your Python environment.
 
 3. **Run the Examples**:
-   - Open the Python file in your preferred IDE or text editor, and execute the code to see the examples in action. Each file is designed to demonstrate a specific concept in Python.
+   - Open the Python file in your preferred IDE or text editor. I am using PyCharm, but any Python-compatible IDE will work. Execute the code to see the examples in action. Each file is designed to demonstrate a specific concept in Python.
 
 ## Requirements
 
-- **Python 3.x** is required to run the scripts in this repository. Make sure to have Python installed on your system.
+- **Python 3.12** is required to run the scripts in this repository. Make sure you have Python installed on your system.
 
 ## Contributions
 
@@ -73,8 +73,11 @@ Feel free to fork this repository and contribute by submitting pull requests. Wh
 
 ## License
 
-This repository is since these are assignments for my class, I have no issues sharing this publicy, unless my profesor deems otherwise. My perpous in sharing this publically is to showcase this to potentil empoyeers. 
+This repository is not under any specific license since these are assignments for my class. I have no issues sharing this publicly unless my professor deems otherwise. My purpose in sharing this publicly is to showcase my work to potential employers.
 
 ---
 
-With love - SMRCCC3301
+With love,  
+**SMRCCC3301**
+
+---
