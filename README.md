@@ -1,4 +1,4 @@
-# Python 1 Course Guide
+# Python 1 Course Guide - made on pycharm
 
 ## Assignments
 
