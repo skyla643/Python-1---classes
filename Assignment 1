@@ -1,34 +1,34 @@
-# Function to get numeric input from the user
-def get_number(prompt):
-    user_input = input(prompt)
-    if user_input.isdigit():
-        return float(user_input)
+print("Simple Interest Calculator")
+
+# Get user input for principal amount
+while True:
+    principal_input = input("Enter the principal amount: ")
+    if principal_input.isdigit():
+        principal = float(principal_input)
+        break
     else:
         print("Please enter a valid number.")
-        return get_number(prompt)
 
+# Get user input for rate of interest
+while True:
+    rate_input = input("Enter the rate of interest: ")
+    if rate_input.isdigit():
+        rate = float(rate_input)
+        break
+    else:
+        print("Please enter a valid number.")
 
-# Function to calculate simple interest
-def calculate_simple_interest(principal, rate, time):
-    return (principal * rate * time) / 100
+# Get user input for time period in years
+while True:
+    time_input = input("Enter the time period (in years): ")
+    if time_input.isdigit():
+        time = float(time_input)
+        break
+    else:
+        print("Please enter a valid number.")
 
+# Calculate simple interest
+simple_interest = (principal * rate * time) / 100
 
-# Main part of the program
-def main():
-    print("Simple Interest Calculator")
-
-    # Get user input
-    principal = get_number("Enter the principal amount: ")
-    rate = get_number("Enter the rate of interest: ")
-    time = get_number("Enter the time period (in years): ")
-
-    # Calculate simple interest
-    simple_interest = calculate_simple_interest(principal, rate, time)
-
-    # Display the result
-    print("The simple interest is:", simple_interest)
-
-
-# Run the main function
-if __name__ == "__main__":
-    main()
+# Display the result
+print("The simple interest is:", simple_interest)
