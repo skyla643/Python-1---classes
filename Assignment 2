@@ -1,9 +1,8 @@
-#input 
-length = float(input("enter your length: "))
-width = float(input("enter your width: "))
 
-#processing 
-area = length * width
-
-#output
-print("the area is: ", area)
+# input
+length = float(input("Enter a length: "))
+w = float(input("Enter a width: "))
+# processing
+area = length * w
+# output
+print("The area is: ", area)
