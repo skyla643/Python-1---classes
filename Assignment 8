@@ -1,45 +1,51 @@
-# Function to get valid marks from the user
-def get_valid_marks(subject_name):
-    while True:  # Keep asking until the user enters valid marks
-        try:
-            marks = float(input(f"Enter your marks for {subject_name} (0-100): "))
-            if 0 <= marks <= 100:
-                return marks  # Return the valid marks
-            else:
-                print("Marks should be between 0 and 100. Please try again.")
-        except ValueError:
-            print("Invalid input. Please enter a number between 0 and 100.")
+print("Grade Calculator")
 
-# Function to determine the grade based on average marks
-def calculate_grade(average_marks):
-    if average_marks >= 90:
-        return 'A'
-    elif average_marks >= 80:
-        return 'B'
-    elif average_marks >= 70:
-        return 'C'
-    elif average_marks >= 60:
-        return 'D'
-    else:
-        return 'F'
+# Ask the user to enter marks for three subjects
+while True:
+    try:
+        subject1 = float(input("Enter your marks for Subject 1 (0-100): "))
+        if 0 <= subject1 <= 100:
+            break
+        else:
+            print("Marks should be between 0 and 100. Please try again.")
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 100.")
 
-# Main function to run the program
-def main():
-    # Ask the user to enter marks for three subjects
-    subject1 = get_valid_marks("Subject 1")
-    subject2 = get_valid_marks("Subject 2")
-    subject3 = get_valid_marks("Subject 3")
+while True:
+    try:
+        subject2 = float(input("Enter your marks for Subject 2 (0-100): "))
+        if 0 <= subject2 <= 100:
+            break
+        else:
+            print("Marks should be between 0 and 100. Please try again.")
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 100.")
 
-    # Calculate the average marks
-    average_marks = (subject1 + subject2 + subject3) / 3
+while True:
+    try:
+        subject3 = float(input("Enter your marks for Subject 3 (0-100): "))
+        if 0 <= subject3 <= 100:
+            break
+        else:
+            print("Marks should be between 0 and 100. Please try again.")
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 100.")
 
-    # Determine the grade based on the average
-    grade = calculate_grade(average_marks)
+# Calculate the average marks
+average_marks = (subject1 + subject2 + subject3) / 3
 
-    # Display the average marks and the grade
-    print(f"\nYour average marks: {average_marks:.2f}")
-    print(f"Your grade: {grade}")
+# Determine the grade based on the average
+if average_marks >= 90:
+    grade = 'A'
+elif average_marks >= 80:
+    grade = 'B'
+elif average_marks >= 70:
+    grade = 'C'
+elif average_marks >= 60:
+    grade = 'D'
+else:
+    grade = 'F'
 
-# This line runs the main function when the script is executed
-if __name__ == "__main__":
-    main()
+# Display the average marks and the grade
+print(f"\nYour average marks: {average_marks:.2f}")
+print(f"Your grade: {grade}")
