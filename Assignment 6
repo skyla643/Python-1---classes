@@ -1,39 +1,30 @@
 # Fixed exchange rates for some currency pairs
 exchange_rates = {
     'USD to EUR': 0.85,
-    'EUR to USD': 1.18,  # Corrected exchange rate
+    'EUR to USD': 1.18,
     'USD to JPY': 110.49,
-    'JPY to USD': 0.0091,  # Corrected exchange rate
+    'JPY to USD': 0.0091,
     'USD to GBP': 0.76,
-    'GBP to USD': 1.32  # Corrected exchange rate
+    'GBP to USD': 1.32
 }
 
-# Function to perform currency conversion
-def convert_currency(amount, from_currency, to_currency):
+# Display available currency pairs
+print("Available currency pairs:")
+for pair in exchange_rates.keys():
+    print(pair)
+
+try:
+    # Get user input for source and target currencies
+    from_currency = input("Enter the source currency (e.g., USD): ").upper()
+    to_currency = input("Enter the target currency (e.g., EUR): ").upper()
+    amount = float(input(f"Enter the amount in {from_currency}: "))
+
+    # Perform currency conversion
     pair = f'{from_currency} to {to_currency}'
     if pair in exchange_rates:
-        return amount * exchange_rates[pair]
+        result = amount * exchange_rates[pair]
+        print(f'{amount:.2f} {from_currency} is equal to {result:.2f} {to_currency}')
     else:
-        return None  # Fixed 'none' to 'None'
-
-def main():
-    print("Available currency pairs:")
-    for pair in exchange_rates.keys():
-        print(pair)
-
-    try:
-        from_currency = input("Enter the source currency (e.g., USD): ").upper()
-        to_currency = input("Enter the target currency (e.g., EUR): ").upper()
-        amount = float(input(f"Enter the amount in {from_currency}: "))
-
-        result = convert_currency(amount, from_currency, to_currency)
-
-        if result is not None:
-            print(f'{amount:.2f} {from_currency} is equal to {result:.2f} {to_currency}')
-        else:
-            print("Invalid currency pair or unsupported conversion.")
-    except ValueError:
-        print("Invalid amount entered. Please enter a numerical value.")
-
-if __name__ == "__main__":
-    main()  # Moved the if statement to the correct position
+        print("Invalid currency pair or unsupported conversion.")
+except ValueError:
+    print("Invalid amount entered. Please enter a numerical value.")
