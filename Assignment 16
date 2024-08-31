@@ -1,0 +1,45 @@
+def is_prime(n):
+    """
+    Determines if a given positive integer is a prime number.
+
+    Parameters:
+    n (int): The number to check.
+
+    Returns:
+    bool: True if the number is prime, False otherwise.
+    """
+    # Handle base cases
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True  # 2 and 3 are prime numbers
+
+    # Eliminate multiples of 2 and 3
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+
+    # Check for factors from 5 to sqrt(n)
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+
+    return True
+
+while True:
+    try:
+        number = int(input("Enter a positive integer to check if it is a prime number: "))
+        
+        if number > 0:
+            break  # Exit loop if valid input
+        else:
+            print("Please enter a positive integer.")
+    
+    except ValueError:
+        print("Invalid input. Please enter a numeric value.")
+
+if is_prime(number):
+    print(f"The number {number} is a prime number.")
+else:
+    print(f"The number {number} is not a prime number.")
