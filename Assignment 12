@@ -1,0 +1,21 @@
+while True:
+    try:
+        # Get the number of rows for the pattern
+        rows = int(input("Enter the number of rows for the pattern: "))
+        
+        if rows > 0:
+            break  # Exit loop if valid input
+        else:
+            print("Please enter a positive integer for the number of rows.")
+    
+    except ValueError:
+        print("Invalid input. Please enter a numeric value.")
+
+pattern_char = input("Enter the character you want to use for the pattern: ")
+
+print("\nPattern:")
+
+for i in range(1, rows + 1):  # Outer loop for each row
+    for j in range(i):  # Inner loop for characters in each row
+        print(pattern_char, end="")  # Print the specified character
+    print()  # Move to the next line after each row is printed
