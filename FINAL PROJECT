@@ -1,0 +1,139 @@
+# Initialize the inventory list
+inventory = []  # This will hold all the items as dictionaries
+
+# Function to add an item to the inventory
+def add_item():
+    print("\nAdding a new item to the inventory...")
+    name = input("Enter the name of the item: ")
+    price = input("Enter the price of the item: ")
+    quantity = input("Enter the quantity of the item: ")
+    category = input("Enter the category of the item: ")
+
+    # Convert price and quantity to appropriate types (float and int)
+    try:
+        price = float(price)
+        quantity = int(quantity)
+    except ValueError:
+        print("Error: Please enter a valid number for price and quantity.")
+        return
+
+    # Create item dictionary
+    item = {
+        'name': name,
+        'price': price,
+        'quantity': quantity,
+        'category': category
+    }
+
+    # Add item to inventory
+    inventory.append(item)
+    print(f"Item '{name}' has been added successfully!")
+
+# Function to update an existing item in the inventory
+def update_item():
+    print("\nUpdating an item in the inventory...")
+    name = input("Enter the name of the item you want to update: ")
+    
+    # Check if item exists in the inventory
+    for item in inventory:
+        if item['name'].lower() == name.lower():
+            print("Enter new details for the item. Leave blank to keep current value.")
+
+            # Get new details from user, or keep current value if input is empty
+            new_price = input(f"Enter new price (current: {item['price']}): ")
+            new_quantity = input(f"Enter new quantity (current: {item['quantity']}): ")
+            new_category = input(f"Enter new category (current: {item['category']}): ")
+
+            # Update item if new values are provided
+            if new_price:
+                try:
+                    item['price'] = float(new_price)
+                except ValueError:
+                    print("Error: Please enter a valid number for the price.")
+                    return
+            if new_quantity:
+                try:
+                    item['quantity'] = int(new_quantity)
+                except ValueError:
+                    print("Error: Please enter a valid number for the quantity.")
+                    return
+            if new_category:
+                item['category'] = new_category
+
+            print(f"Item '{name}' has been updated successfully!")
+            return
+
+    print(f"Item '{name}' not found in the inventory.")
+
+# Function to view all items in the inventory
+def view_inventory():
+    print("\nViewing all items in the inventory...")
+    if not inventory:
+        print("The inventory is currently empty.")
+        return
+    
+    # Display each item with details
+    for item in inventory:
+        print(f"Name: {item['name']}, Price: {item['price']}, Quantity: {item['quantity']}, Category: {item['category']}")
+
+# Function to remove an item from the inventory
+def remove_item():
+    print("\nRemoving an item from the inventory...")
+    name = input("Enter the name of the item you want to remove: ")
+    
+    # Find and remove the item from the inventory
+    for item in inventory:
+        if item['name'].lower() == name.lower():
+            inventory.remove(item)
+            print(f"Item '{name}' has been removed successfully!")
+            return
+    
+    print(f"Item '{name}' not found in the inventory.")
+
+# Function to search for items by category
+def search_by_category():
+    print("\nSearching for items by category...")
+    category = input("Enter the category to search for: ")
+
+    # Find all items in the specified category
+    found = False
+    for item in inventory:
+        if item['category'].lower() == category.lower():
+            print(f"Name: {item['name']}, Price: {item['price']}, Quantity: {item['quantity']}")
+            found = True
+    
+    if not found:
+        print(f"No items found in the category '{category}'.")
+
+# Main loop to interact with the user
+def main():
+    print("Welcome to the Inventory Management System!")
+    while True:
+        print("\nPlease choose an option:")
+        print("1. Add Item")
+        print("2. Update Item")
+        print("3. View Inventory")
+        print("4. Remove Item")
+        print("5. Search by Category")
+        print("6. Exit")
+        
+        choice = input("Enter your choice (1-6): ")
+        
+        if choice == '1':
+            add_item()
+        elif choice == '2':
+            update_item()
+        elif choice == '3':
+            view_inventory()
+        elif choice == '4':
+            remove_item()
+        elif choice == '5':
+            search_by_category()
+        elif choice == '6':
+            print("Exiting the system. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 6.")
+
+# Run the main loop
+main()
