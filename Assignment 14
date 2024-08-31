@@ -1,0 +1,32 @@
+def power(base, exponent):
+    """
+    Calculates the power of a number with both positive and negative exponents.
+
+    Parameters:
+    base (int or float): The base number.
+    exponent (int): The exponent number (can be negative).
+
+    Returns:
+    float: Result of base raised to the power of exponent.
+    """
+    result = 1.0  # Initialize result as 1 for multiplication
+
+    if exponent < 0:
+        base = 1 / base  # Invert base if exponent is negative
+        exponent = -exponent  # Make exponent positive for loop
+
+    for _ in range(exponent):
+        result *= base
+
+    return result
+
+while True:
+    try:
+        base = float(input("Enter the base number (integer or float): "))
+        exponent = int(input("Enter the exponent (integer): "))
+        break  # Exit loop if input is valid
+    except ValueError:
+        print("Invalid input. Please enter numeric values for base and an integer for exponent.")
+
+result = power(base, exponent)
+print(f"{base} raised to the power of {exponent} is: {result}")
