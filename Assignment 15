@@ -1,0 +1,30 @@
+def is_palindrome(s):
+    """
+    Recursively checks if a given string is a palindrome.
+
+    Parameters:
+    s (str): The string to check.
+
+    Returns:
+    bool: True if the string is a palindrome, False otherwise.
+    """
+    if len(s) <= 1:
+        return True
+   
+if s[0] == s[-1]:
+        # Call the function recursively on the substring excluding the first and last characters
+        return is_palindrome(s[1:-1])
+    
+    # If the first and last characters do not match, it's not a palindrome
+    return False
+
+user_input = input("Enter a string to check if it is a palindrome: ")
+
+# Remove spaces and convert to lowercase for uniformity
+cleaned_input = user_input.replace(" ", "").lower()
+
+# Step 3: Call the is_palindrome function and display the result
+if is_palindrome(cleaned_input):
+    print(f"The string '{user_input}' is a palindrome.")
+else:
+    print(f"The string '{user_input}' is not a palindrome.")
