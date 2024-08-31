@@ -1,0 +1,20 @@
+user_input = input("Enter a string to check if it is a palindrome: ")
+
+cleaned_input = user_input.replace(" ", "").lower()
+
+left_index = 0
+right_index = len(cleaned_input) - 1
+
+is_palindrome = True  # Assume the input is a palindrome until proven otherwise
+
+while left_index < right_index:
+    if cleaned_input[left_index] != cleaned_input[right_index]:
+        is_palindrome = False  # If any characters don't match, it's not a palindrome
+        break  # Exit the loop as we found a mismatch
+    left_index += 1  # Move left pointer towards the center
+    right_index -= 1  # Move right pointer towards the center
+
+if is_palindrome:
+    print(f"The string '{user_input}' is a palindrome.")
+else:
+    print(f"The string '{user_input}' is not a palindrome.")
