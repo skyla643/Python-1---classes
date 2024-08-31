@@ -1,0 +1,34 @@
+def find_common_elements(list1, list2):
+    """
+    Finds common elements between two input lists.
+
+    Parameters:
+    list1 (list): The first list of elements.
+    list2 (list): The second list of elements.
+
+    Returns:
+    list: A new list containing elements that are common to both input lists.
+    """
+    # Convert the lists to sets for faster lookup and use set intersection
+    set1 = set(list1)
+    set2 = set(list2)
+
+    # Find the common elements using set intersection
+    common_elements = set1.intersection(set2)
+
+    # Convert the result back to a list and return it
+    return list(common_elements)
+
+list1_input = input("Enter the elements of the first list separated by spaces: ")
+list2_input = input("Enter the elements of the second list separated by spaces: ")
+
+# Convert the input strings into lists of elements
+list1 = list1_input.split()
+list2 = list2_input.split()
+
+common_elements = find_common_elements(list1, list2)
+
+if common_elements:
+    print("Common elements between the two lists:", common_elements)
+else:
+    print("There are no common elements between the two lists.")
