@@ -1,0 +1,35 @@
+def sort_list(input_list):
+    """
+    Sorts a list of numbers in ascending order without using any built-in sorting functions.
+
+    Parameters:
+    input_list (list): The list of numbers to be sorted.
+
+    Returns:
+    list: A new list containing the same elements sorted in ascending order.
+    """
+    # Create a copy of the list to avoid modifying the original
+    sorted_list = input_list.copy()
+
+    n = len(sorted_list)
+    for i in range(n):
+        # Track if any swaps are made during this iteration
+        swapped = False
+        for j in range(0, n - i - 1):
+            if sorted_list[j] > sorted_list[j + 1]:
+                # Swap elements if they are in the wrong order
+                sorted_list[j], sorted_list[j + 1] = sorted_list[j + 1], sorted_list[j]
+                swapped = True
+        # If no elements were swapped, the list is already sorted
+        if not swapped:
+            break
+
+    return sorted_list
+
+list_input = input("Enter the numbers to sort, separated by spaces: ")
+
+input_list = list(map(int, list_input.split()))
+
+sorted_list = sort_list(input_list)
+
+print("Sorted list in ascending order:", sorted_list)
