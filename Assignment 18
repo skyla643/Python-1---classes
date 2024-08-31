@@ -1,0 +1,25 @@
+def concat_tuples(tuple1, tuple2):
+    """
+    Concatenates two input tuples and returns a new tuple containing all elements from both.
+
+    Parameters:
+    tuple1 (tuple): The first tuple of elements.
+    tuple2 (tuple): The second tuple of elements.
+
+    Returns:
+    tuple: A new tuple containing all elements from both input tuples.
+    """
+    # Concatenate the two tuples using the + operator
+    concatenated_tuple = tuple1 + tuple2
+
+    return concatenated_tuple
+
+tuple1_input = input("Enter the elements of the first tuple separated by spaces: ")
+tuple2_input = input("Enter the elements of the second tuple separated by spaces: ")
+
+tuple1 = tuple(tuple1_input.split())
+tuple2 = tuple(tuple2_input.split())
+
+result_tuple = concat_tuples(tuple1, tuple2)
+
+print("Concatenated tuple:", result_tuple) 
