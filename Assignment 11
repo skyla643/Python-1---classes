@@ -1,0 +1,27 @@
+while True:
+    user_input = input("Enter a positive integer: ")
+    
+    try:
+        # Convert the input to an integer
+        number = int(user_input)
+        
+        # Ensure the input is a positive integer
+        if number > 0:
+            break  # Exit the loop if valid input is provided
+        else:
+            print("Please enter a positive integer.")  # Inform the user to enter a positive number
+    
+    except ValueError:
+        # Handle non-numeric input
+        print("Invalid input. Please enter a numeric value.")  # Inform the user about invalid input
+
+print("Collatz sequence for the number", number, ":")  # Print the initial number
+while number != 1:
+    print(number, end=" ")  # Print the current number in the sequence
+    
+    if number % 2 == 0:
+        number = number // 2  # If the number is even, divide it by 2
+    else:
+        number = number * 3 + 1  # If the number is odd, multiply by 3 and add 1
+
+print(1)  
